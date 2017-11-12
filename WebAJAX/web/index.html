@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+    
+        <script>
+            function loadXMLDoc(){
+             var xmlhttp;
+             
+             if(window.XMLHttpRequest){
+                xmlhttp = new XMLHttpRequest(); 
+                 
+             }
+             else{
+                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+             }
+             
+             xmlhttp.onreadystatechange = function ()
+             {
+                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200 )
+                 {
+                    document.getElementById("MiDiv").innerHTML = xmlhttp.responseText; 
+                    
+                 }
+             }
+             xmlhttp.open("GET","AJAX.rtf", true);
+             xmlhttp.send();
+                
+            }
+        </script>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <body>
+        <div id="MiDiv">Probando AJAX en netbeans</div>
+        <div><button  type="button" onclick="loadXMLDoc()">AJAX</button></div>
+    </body>
+
